@@ -12,7 +12,7 @@ public class NPuzzle {
         Scanner buffer = new Scanner(System.in);
         Grafo puzzle = new Grafo();
         for (int i=0; i<16; i++){
-            puzzle.addVertice(buffer.nextInt());
+            puzzle.addVertice(buffer.nextInt(), (i/4), (i%4));
         }
         for (int i=0; i<16; i++){
             if (i>3){

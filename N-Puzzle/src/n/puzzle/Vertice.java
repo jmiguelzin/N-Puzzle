@@ -6,10 +6,14 @@ public class Vertice {
     
     public int valor;
     public ArrayList<Vertice> listAdj;
+    public int posX;
+    public int posY;
     
-    Vertice(int valor){
+    Vertice(int valor, int x, int y){
         this.valor = valor;
         this.listAdj = new ArrayList();
+        this.posX = x;
+        this.posY = y;
     }
     
     public void addAresta(Vertice adj){

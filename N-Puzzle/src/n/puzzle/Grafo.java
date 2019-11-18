@@ -15,14 +15,14 @@ public class Grafo {
         this.vertices = vertices;
     }
     
-    public void addVertice(int valor){
-        this.vertices.add(new Vertice(valor));
+    public void addVertice(int valor, int x, int y){
+        this.vertices.add(new Vertice(valor, x, y));
     }
 
     public Grafo() {
         this.vertices = new ArrayList();
     }
-   
+    
     public void printarGrafo(){
         int i = 1;
         for (Vertice vertice : vertices){
@@ -55,17 +55,21 @@ public class Grafo {
     public int heuristic2(){
         int resultado = 0;
         boolean first = true;
-        Vertice anterior;
+        Vertice anterior = null;
         
         for (Vertice vertice : vertices){
             if (first == false){
-                if (vertice.getValor() )
+                if (vertice.getValor() != anterior.getValor() + 1){
+                    resultado++;
+                }
             }
             else{
                 first = false;
             }
             anterior = vertice;
         }
+        
+        return resultado;
     }
 }
 
