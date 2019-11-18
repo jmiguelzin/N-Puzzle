@@ -35,6 +35,38 @@ public class Grafo {
             i++;
         }
     }
+    
+    public int heuristic1(){
+        int resultado = 0;
+        int i = 1;
+        for (Vertice vertice : vertices){
+            if (i == 16){
+                i=0;
+            }
+            if (vertice.getValor() != i){
+                resultado++;
+            }
+            i++;
+        }
+        
+        return resultado;
+    }
+    
+    public int heuristic2(){
+        int resultado = 0;
+        boolean first = true;
+        Vertice anterior;
+        
+        for (Vertice vertice : vertices){
+            if (first == false){
+                if (vertice.getValor() )
+            }
+            else{
+                first = false;
+            }
+            anterior = vertice;
+        }
+    }
 }
 
 
