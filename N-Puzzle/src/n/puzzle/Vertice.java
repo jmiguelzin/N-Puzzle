@@ -9,7 +9,6 @@ public class Vertice {
     public ArrayList<Vertice> listAdj;
     public int posX;
     public int posY;
-    public int distM;
     
     Vertice(int indice, int valor, int x, int y){
         this.indice = indice;
@@ -63,28 +62,18 @@ public class Vertice {
     public void setPosY(int posY) {
         this.posY = posY;
     }
-
-    public int getDistM() {
-        return distM;
-    }
-
-    public void setDistM(int distM) {
-        this.distM = distM;
-    }
     
     public void printarArestas(){
+        int i = 0;
         System.out.print(this.valor + " -> ");
         for (Vertice vertice : listAdj){
-            if (vertice.indice<listAdj.size()){
+            if (i<listAdj.size()-1){
                 System.out.print(vertice.getValor() + ", ");
             }
             else{
                 System.out.println(vertice.getValor());
             }
+            i++;
         }
-    }
-    
-    public void calculaDist(Vertice vertice){
-        
     }
 }

@@ -3,6 +3,7 @@ package n.puzzle;
 
 import java.util.ArrayList;
 
+
 public class Grafo {
     
     public ArrayList<Vertice> vertices;
@@ -57,7 +58,7 @@ public class Grafo {
         
         for (Vertice vertice : vertices){
             if (first == false){
-                if (vertice.getValor() != anterior.getValor() + 1){
+                if (vertice.getValor() != anterior.getValor() + 1 && anterior.getValor() != 0){
                     resultado++;
                 }
             }
@@ -68,6 +69,25 @@ public class Grafo {
         }
         
         return resultado;
+    }
+    
+    public int calculaDist(int x1, int y1, int x2, int y2){
+        
+        return Math.abs(x1-x2) + Math.abs(y1-y2);
+        
+    }
+    
+    public int heuristic3(Vertice origem){
+        
+        Vertice destino;
+        if (origem.valor != 0){
+            destino = vertices.get(origem.valor-1);
+        }
+        else{
+            destino = vertices.get(15);
+        }
+        
+        return calculaDist(origem.getPosX(), origem.getPosY(), destino.getPosX(), destino.getPosY());
     }
 }
 
