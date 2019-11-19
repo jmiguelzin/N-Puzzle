@@ -15,8 +15,8 @@ public class Grafo {
         this.vertices = vertices;
     }
     
-    public void addVertice(int valor, int x, int y){
-        this.vertices.add(new Vertice(valor, x, y));
+    public void addVertice(int indice, int valor, int x, int y){
+        this.vertices.add(new Vertice(indice, valor, x, y));
     }
 
     public Grafo() {
@@ -24,16 +24,14 @@ public class Grafo {
     }
     
     public void printarGrafo(){
-        int i = 1;
-        for (Vertice vertice : vertices){
-            if (i%4!=0){
+        vertices.forEach((vertice) -> {
+            if (vertice.indice%4!=0){
                 System.out.print(vertice.getValor() + " - ");
             }
             else{
                 System.out.println(vertice.getValor());
             }
-            i++;
-        }
+        });
     }
     
     public int heuristic1(){
